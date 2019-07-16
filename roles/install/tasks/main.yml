@@ -1,0 +1,19 @@
+
+# mainly for the GPGKEY. The repositoryfile will be replace with
+# a templatefile!
+- name: Install YUM Repositories with GPGKEY
+  yum:
+    name: "https://yum.enterprisedb.com/edbrepos/edb-repo-latest.noarch.rpm"
+    state: latest
+
+- name: Configure YUM-Repositories
+  template:
+    src: edb.repo.j2
+    dest: /etc/yum.repos.d/edb.repo
+    backup: yes
+    mode: 0600
+
+- name: Install RPMs
+  yum: 
+    name: ["edb-as11-server","edb-bart"]
+    state: latest

@@ -1,0 +1,6 @@
+ - name: Insall Enterprise DB Advanced Server
+   hosts: localhost
+   become: yes
+   roles:
+     - install
+     - create_db

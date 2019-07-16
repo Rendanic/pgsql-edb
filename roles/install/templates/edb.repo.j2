@@ -1,0 +1,23 @@
+
+[edbas11]
+name=EnterpriseDB Advanced Server 11 $releasever - $basearch
+baseurl=https://{{yumuser}}:{{yumpassword}}@yum.enterprisedb.com/11/redhat/rhel-$releasever-$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/ENTERPRISEDB-GPG-KEY
+
+
+[enterprisedb-tools]
+name=EnterpriseDB Tools $releasever - $basearch
+baseurl=https://{{yumuser}}:{{yumpassword}}@yum.enterprisedb.com/tools/redhat/rhel-$releasever-$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/ENTERPRISEDB-GPG-KEY
+
+[enterprisedb-dependencies]
+name=EnterpriseDB Dependencies $releasever - $basearch
+baseurl=https://{{yumuser}}:{{yumpassword}}@yum.enterprisedb.com/dependencies/redhat/rhel-$releasever-$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/ENTERPRISEDB-GPG-KEY
+
