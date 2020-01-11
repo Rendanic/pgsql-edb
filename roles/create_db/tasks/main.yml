@@ -1,11 +1,11 @@
 - name: Create Database
-  command: /usr/edb/as11/bin/edb-as-11-setup initdb
+  command: /usr/edb/as{{pgversion}}/bin/edb-as-{{pgversion}}-setup initdb
   args:
-    creates: /var/lib/edb/as11/data/base
+    creates: /var/lib/edb/as{{pgversion}}/data/base
   become: yes
 
 - name: Start Database
   service:
-    name: edb-as-11
+    name: edb-as-{{pgversion}}
     enabled: yes
     state: started

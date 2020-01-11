@@ -17,5 +17,5 @@
 
 - name: Install RPMs
   yum: 
-    name: ["edb-as12-server"]
+    name: ["edb-as{{pgversion}}-server", "bash-completion"]
     state: latest

@@ -1,6 +1,8 @@
  - name: Insall Enterprise DB Advanced Server
    hosts: localhost
    become: yes
+   vars:
+     pgversion: 12
    roles:
      - install
      - create_db
