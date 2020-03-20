@@ -4,6 +4,14 @@
     creates: /var/lib/edb/as{{pgversion}}/data/base
   become: yes
 
+- name: pg_hba.conf Instance Network
+  lineinfile:
+    path: /var/lib/edb/as{{pgversion}}/data/pg_hba.conf
+    line : 'host    all             all             0.0.0.0/0               md5'
+    insertafter: '^host    all             all             127.0.0.1'
+    state: present
+  tags: pg_hba
+
 - name: Start Database
   service:
     name: edb-as-{{pgversion}}
